@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quyền riêng tư · Lịch Âm</title>
+<meta name="description" content="Chính sách bảo mật của ứng dụng Lịch Âm — Lịch Việt &amp; Tử Vi.">
+<style>
+  /* Bảng màu lấy từ chính app: đỏ sơn mài trên nền ngà ấm.
+     Sáng là mặc định, tối chỉ định nghĩa lại token. */
+  :root {
+    --nen: #FCFAF8;
+    --the: #FFFFFF;
+    --vien: #E8DFDA;
+    --chu: #221C1A;
+    --chu-mo: #6B615C;
+    --nhan: #9A2B25;
+    --tot-nen: #EDF5EF;
+    --tot-vien: #C9E0D0;
+    --tot-chu: #1C5B39;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --nen: #14100F;
+      --the: #1B1615;
+      --vien: #302826;
+      --chu: #EDE7E3;
+      --chu-mo: #A2948D;
+      --nhan: #E68A7E;
+      --tot-nen: #16221B;
+      --tot-vien: #2C4536;
+      --tot-chu: #8FD3A8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --nen: #14100F;
+    --the: #1B1615;
+    --vien: #302826;
+    --chu: #EDE7E3;
+    --chu-mo: #A2948D;
+    --nhan: #E68A7E;
+    --tot-nen: #16221B;
+    --tot-vien: #2C4536;
+    --tot-chu: #8FD3A8;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--nen);
+    color: var(--chu);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .khung {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  header { display: flex; flex-direction: column; gap: .75rem; }
+  .eyebrow {
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--nhan);
+    font-weight: 600;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+  }
+  .ngay { color: var(--chu-mo); font-size: .95rem; }
+
+  .ngonngu { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .ngonngu a {
+    font-size: .85rem;
+    text-decoration: none;
+    color: var(--chu-mo);
+    border: 1px solid var(--vien);
+    border-radius: 999px;
+    padding: .35rem .85rem;
+    background: var(--the);
+  }
+  .ngonngu a:hover, .ngonngu a:focus-visible { color: var(--nhan); border-color: var(--nhan); }
+
+  .tomtat {
+    background: var(--tot-nen);
+    border: 1px solid var(--tot-vien);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    color: var(--tot-chu);
+    font-size: 1.02rem;
+  }
+  .tomtat strong { font-weight: 700; }
+
+  section { display: flex; flex-direction: column; gap: .85rem; }
+  h2 {
+    margin: 0;
+    font-size: 1.02rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--nhan);
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--vien);
+  }
+  h3 { margin: .5rem 0 0; font-size: 1.05rem; }
+  p { margin: 0; }
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  li::marker { color: var(--nhan); }
+  a { color: var(--nhan); }
+  .mo { color: var(--chu-mo); }
+
+  .bang { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--vien); vertical-align: top; }
+  th { font-weight: 600; color: var(--chu-mo); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+
+  hr.chia { border: 0; border-top: 1px solid var(--vien); margin: 1.5rem 0 0; }
+  footer { color: var(--chu-mo); font-size: .9rem; }
+  :focus-visible { outline: 2px solid var(--nhan); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="khung">
+
+  <header>
+    <div class="eyebrow">Lịch Âm · Lịch Việt &amp; Tử Vi</div>
+    <h1>Chính sách bảo mật</h1>
+    <div class="ngay">Có hiệu lực từ 14/08/2026 · Phiên bản 1.0.0</div>
+    <nav class="ngonngu" aria-label="Ngôn ngữ">
+      <a href="#vi">Tiếng Việt</a>
+      <a href="#en">English</a>
+    </nav>
+  </header>
+
+  <div class="tomtat" id="vi">
+    <strong>Tóm tắt:</strong> ứng dụng Lịch Âm không thu thập, không gửi và
+    không chia sẻ dữ liệu của bạn. App không có kết nối mạng nào. Mọi thứ bạn
+    nhập vào đều nằm trong máy bạn.
+  </div>
+
+  <section>
+    <h2>Ai chịu trách nhiệm</h2>
+    <p>
+      Ứng dụng <strong>Lịch Âm — Lịch Việt &amp; Tử Vi</strong>
+      (mã ứng dụng <code>com.bquminh.calendar</code>) do cá nhân Bùi Quang Minh
+      phát triển và phát hành. Mọi câu hỏi về quyền riêng tư xin gửi tới
+      <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Dữ liệu app lưu trên máy bạn</h2>
+    <p>
+      Những dữ liệu dưới đây nằm trong vùng nhớ riêng của ứng dụng trên thiết
+      bị. Chúng không được gửi đi đâu và sẽ mất khi bạn gỡ ứng dụng.
+    </p>
+    <div class="bang">
+      <table>
+        <thead>
+          <tr><th>Dữ liệu</th><th>Vì sao cần</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cài đặt hiển thị: ngôn ngữ, giao diện sáng/tối, màu chủ đạo, ngày bắt đầu tuần</td>
+            <td>Giữ nguyên lựa chọn của bạn cho lần mở sau</td>
+          </tr>
+          <tr>
+            <td>Ngày giờ sinh và giới tính bạn nhập để lập lá số tử vi</td>
+            <td>Lập lá số và mở lại lá số cũ mà không phải nhập lại</td>
+          </tr>
+          <tr>
+            <td>Danh sách lá số bạn đã lưu, kèm tên bạn tự đặt</td>
+            <td>Cho phép xem lại nhiều lá số</td>
+          </tr>
+          <tr>
+            <td>Lựa chọn lịch nào được bật để hiển thị sự kiện</td>
+            <td>Nhớ những lịch bạn muốn thấy trong màn lịch</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mo">
+      Ngày âm, ngày tốt xấu, tiết khí và lá số đều được tính ngay trên máy bằng
+      bảng và công thức đóng sẵn trong ứng dụng, không cần internet.
+    </p>
+  </section>
+
+  <section>
+    <h2>Quyền truy cập lịch</h2>
+    <p>
+      Ứng dụng xin quyền <strong>đọc và ghi lịch</strong> để làm hai việc, và
+      chỉ hai việc đó:
+    </p>
+    <ul>
+      <li>Hiển thị sự kiện của các lịch sẵn có trên máy bạn ngay cạnh ngày âm.</li>
+      <li>Tạo, sửa và xoá ghi chú hoặc sự kiện khi bạn chủ động yêu cầu.</li>
+    </ul>
+    <p>
+      Nội dung sự kiện chỉ được đọc ra để hiển thị trong ứng dụng. Ứng dụng
+      không sao chép, không lưu lại và không gửi nội dung đó đi đâu. Sự kiện
+      bạn tạo được ghi thẳng vào tài khoản lịch bạn chọn (ví dụ Google,
+      iCloud) và từ đó do nhà cung cấp tài khoản ấy quản lý theo chính sách
+      riêng của họ.
+    </p>
+    <p>
+      Bạn có thể từ chối hoặc thu hồi quyền này bất cứ lúc nào trong phần cài
+      đặt của hệ điều hành. Khi đó ứng dụng vẫn dùng được bình thường, chỉ là
+      phần sự kiện sẽ trống.
+    </p>
+  </section>
+
+  <section>
+    <h2>Những gì ứng dụng không làm</h2>
+    <ul>
+      <li>Không thu thập tên, email, số điện thoại hay bất kỳ thông tin định danh nào.</li>
+      <li>Không thu thập vị trí, danh bạ, ảnh, tệp hay dữ liệu sức khoẻ.</li>
+      <li>Không có tài khoản, không có đăng nhập.</li>
+      <li>Không quảng cáo, không mua trong ứng dụng.</li>
+      <li>Không nhúng công cụ phân tích, đo lường hay theo dõi của bên thứ ba.</li>
+      <li>Không bán, không chia sẻ, không chuyển dữ liệu cho bên nào khác.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Trẻ em</h2>
+    <p>
+      Ứng dụng không hướng riêng tới trẻ em và cũng không thu thập dữ liệu của
+      bất kỳ ai, nên không có dữ liệu trẻ em nào được xử lý.
+    </p>
+  </section>
+
+  <section>
+    <h2>Quyền của bạn</h2>
+    <p>
+      Vì toàn bộ dữ liệu nằm trên máy bạn, bạn kiểm soát chúng trực tiếp: xoá
+      lá số đã lưu trong ứng dụng, thu hồi quyền lịch trong cài đặt hệ điều
+      hành, hoặc gỡ ứng dụng để xoá sạch mọi thứ ứng dụng đã lưu. Không có bản
+      sao nào ở phía chúng tôi để phải yêu cầu xoá.
+    </p>
+  </section>
+
+  <section>
+    <h2>Nội dung tử vi và ngày tốt xấu</h2>
+    <p>
+      Phần ngày tốt xấu, hướng xuất hành và lá số tử vi được an theo bảng cổ
+      truyền, mang tính tham khảo về văn hoá. Ứng dụng không đưa ra lời khuyên
+      y tế, tài chính hay pháp lý.
+    </p>
+  </section>
+
+  <section>
+    <h2>Thay đổi chính sách</h2>
+    <p>
+      Nếu có phiên bản nào bắt đầu xử lý dữ liệu khác đi, chính sách này sẽ
+      được cập nhật kèm ngày hiệu lực mới trước khi phiên bản đó phát hành.
+    </p>
+  </section>
+
+  <hr class="chia">
+
+  <div class="tomtat" id="en">
+    <strong>In short:</strong> Lịch Âm collects nothing, sends nothing and
+    shares nothing. The app makes no network connections. Everything you enter
+    stays on your device.
+  </div>
+
+  <section>
+    <h2>Privacy policy · English</h2>
+    <h3>Who is responsible</h3>
+    <p>
+      <strong>Lịch Âm — Lịch Việt &amp; Tử Vi</strong>
+      (<code>com.bquminh.calendar</code>) is developed and published by
+      Bui Quang Minh. For any privacy question, write to
+      <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a>.
+    </p>
+
+    <h3>Data stored on your device</h3>
+    <p>
+      The app keeps the following in its private storage on your device. None
+      of it leaves the device, and all of it disappears when you uninstall:
+      display settings (language, light or dark theme, accent colour, first day
+      of the week); the birth date, hour and gender you enter for a Tử Vi
+      chart; the charts you choose to save, with the names you give them; and
+      which of your calendars are switched on for display.
+    </p>
+    <p>
+      Lunar dates, auspicious days, solar terms and Tử Vi charts are all
+      computed on the device from tables built into the app. No internet
+      connection is used.
+    </p>
+
+    <h3>Calendar permission</h3>
+    <p>
+      The app requests read and write access to your calendars for two purposes
+      only: to show events from the calendars already on your device alongside
+      the lunar date, and to create, edit or delete notes and events when you
+      explicitly ask it to. Event contents are read for display only — never
+      copied, stored or transmitted. Events you create are written into the
+      calendar account you pick (for example Google or iCloud) and are then
+      governed by that provider's own policy. You can refuse or revoke this
+      permission at any time in your system settings; the rest of the app keeps
+      working.
+    </p>
+
+    <h3>What the app does not do</h3>
+    <p>
+      It collects no name, email, phone number or other identifier; no
+      location, contacts, photos, files or health data. There are no accounts
+      and no sign-in, no advertising, no in-app purchases, no third-party
+      analytics or tracking, and no sale, sharing or transfer of data to anyone.
+    </p>
+
+    <h3>Children</h3>
+    <p>
+      The app is not directed at children and collects no data from anyone, so
+      no children's data is processed.
+    </p>
+
+    <h3>Your rights</h3>
+    <p>
+      All data lives on your device, so you control it directly: delete saved
+      charts in the app, revoke the calendar permission in system settings, or
+      uninstall the app to erase everything it has stored. We hold no copy that
+      you would need to request deletion of.
+    </p>
+
+    <h3>Divination content</h3>
+    <p>
+      Auspicious days, travel directions and Tử Vi charts follow traditional
+      tables and are offered as cultural reference. The app gives no medical,
+      financial or legal advice.
+    </p>
+
+    <h3>Changes</h3>
+    <p>
+      If a future version starts handling data differently, this policy will be
+      updated with a new effective date before that version ships.
+    </p>
+  </section>
+
+  <footer>
+    Lịch Âm · com.bquminh.calendar · Cập nhật 14/08/2026
+  </footer>
+
+</div>
+</body>
+</html>
