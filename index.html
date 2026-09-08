@@ -136,7 +136,7 @@
   <header>
     <div class="eyebrow">Lịch Âm · Lịch Việt &amp; Tử Vi</div>
     <h1>Chính sách bảo mật</h1>
-    <div class="ngay">Có hiệu lực từ 14/08/2026 · Phiên bản 1.0.0</div>
+    <div class="ngay">Có hiệu lực từ 08/09/2026 · Phiên bản 1.1.1</div>
     <nav class="ngonngu" aria-label="Ngôn ngữ">
       <a href="#vi">Tiếng Việt</a>
       <a href="#en">English</a>
@@ -144,9 +144,11 @@
   </header>
 
   <div class="tomtat" id="vi">
-    <strong>Tóm tắt:</strong> ứng dụng Lịch Âm không thu thập, không gửi và
-    không chia sẻ dữ liệu của bạn. App không có kết nối mạng nào. Mọi thứ bạn
-    nhập vào đều nằm trong máy bạn.
+    <strong>Tóm tắt:</strong> mọi thứ bạn nhập vào ứng dụng Lịch Âm — ngày
+    sinh, lá số, cài đặt — đều nằm trong máy bạn và không được gửi đi đâu. Ứng
+    dụng có gửi số liệu sử dụng và báo cáo sự cố cho Google Firebase để tìm và
+    sửa lỗi; phần này không kèm tên, email hay nội dung bạn nhập, nhưng có kèm
+    một mã định danh riêng của bản cài. Không quảng cáo, không bán dữ liệu.
   </div>
 
   <section>
@@ -197,6 +199,54 @@
   </section>
 
   <section>
+    <h2>Dữ liệu ứng dụng gửi đi</h2>
+    <p>
+      Từ phiên bản 1.1.1, ứng dụng dùng <strong>Google Firebase</strong>
+      (Analytics, Crashlytics và Remote Config) để biết tính năng nào được
+      dùng và để nhận báo cáo khi ứng dụng gặp sự cố. Đây là những thứ được
+      gửi đi:
+    </p>
+    <div class="bang">
+      <table>
+        <thead>
+          <tr><th>Dữ liệu</th><th>Vì sao cần</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Màn hình bạn mở và các sự kiện dùng ứng dụng, kèm một mã định danh riêng của mỗi bản cài</td>
+            <td>Biết phần nào thực sự được dùng để còn ưu tiên sửa và làm tiếp</td>
+          </tr>
+          <tr>
+            <td>Kiểu máy, phiên bản hệ điều hành, phiên bản ứng dụng, ngôn ngữ và quốc gia ước lượng từ địa chỉ IP</td>
+            <td>Biết lỗi xảy ra trên máy nào để dựng lại được</td>
+          </tr>
+          <tr>
+            <td>Báo cáo sự cố: dấu vết lỗi, dòng lệnh đang chạy lúc ứng dụng dừng</td>
+            <td>Tìm ra chỗ hỏng mà không cần bạn phải kể lại</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Phần này <strong>không</strong> kèm tên, email, số điện thoại, ngày sinh
+      hay lá số bạn nhập, cũng không kèm nội dung sự kiện trong lịch của bạn.
+      Mã định danh nói trên gắn với bản cài chứ không gắn với con người bạn, và
+      mất đi khi bạn gỡ ứng dụng.
+    </p>
+    <p>
+      Dữ liệu này do Google xử lý với vai trò bên cung cấp dịch vụ, theo
+      <a href="https://firebase.google.com/support/privacy">chính sách quyền
+      riêng tư của Firebase</a>. Chúng tôi không bán và không chuyển nó cho bên
+      nào khác.
+    </p>
+    <p>
+      Ứng dụng cũng hỏi Firebase Remote Config một ít cấu hình hiển thị, ví dụ
+      biểu tượng ứng dụng có đổi theo mùa lễ hay không. Lượt hỏi ấy chỉ lấy
+      cấu hình về, không gửi dữ liệu của bạn lên.
+    </p>
+  </section>
+
+  <section>
     <h2>Quyền truy cập lịch</h2>
     <p>
       Ứng dụng xin quyền <strong>đọc và ghi lịch</strong> để làm hai việc, và
@@ -223,30 +273,38 @@
   <section>
     <h2>Những gì ứng dụng không làm</h2>
     <ul>
-      <li>Không thu thập tên, email, số điện thoại hay bất kỳ thông tin định danh nào.</li>
-      <li>Không thu thập vị trí, danh bạ, ảnh, tệp hay dữ liệu sức khoẻ.</li>
+      <li>Không thu thập tên, email hay số điện thoại của bạn.</li>
+      <li>Không thu thập vị trí chính xác, danh bạ, ảnh, tệp hay dữ liệu sức khoẻ.</li>
+      <li>Không gửi đi ngày sinh, lá số hay nội dung sự kiện trong lịch của bạn.</li>
       <li>Không có tài khoản, không có đăng nhập.</li>
       <li>Không quảng cáo, không mua trong ứng dụng.</li>
-      <li>Không nhúng công cụ phân tích, đo lường hay theo dõi của bên thứ ba.</li>
-      <li>Không bán, không chia sẻ, không chuyển dữ liệu cho bên nào khác.</li>
+      <li>Không dùng dữ liệu để nhắm quảng cáo, không bán và không chuyển cho bên nào khác ngoài Firebase nói trên.</li>
     </ul>
   </section>
 
   <section>
     <h2>Trẻ em</h2>
     <p>
-      Ứng dụng không hướng riêng tới trẻ em và cũng không thu thập dữ liệu của
-      bất kỳ ai, nên không có dữ liệu trẻ em nào được xử lý.
+      Ứng dụng không hướng riêng tới trẻ em, không hỏi tuổi và không thu thập
+      thông tin định danh cá nhân của bất kỳ ai. Số liệu sử dụng và báo cáo sự
+      cố nói trên được thu thập ở mức thiết bị, không nhằm dựng hồ sơ về người
+      dùng và không dùng để nhắm quảng cáo.
     </p>
   </section>
 
   <section>
     <h2>Quyền của bạn</h2>
     <p>
-      Vì toàn bộ dữ liệu nằm trên máy bạn, bạn kiểm soát chúng trực tiếp: xoá
-      lá số đã lưu trong ứng dụng, thu hồi quyền lịch trong cài đặt hệ điều
-      hành, hoặc gỡ ứng dụng để xoá sạch mọi thứ ứng dụng đã lưu. Không có bản
-      sao nào ở phía chúng tôi để phải yêu cầu xoá.
+      Dữ liệu bạn nhập nằm trên máy bạn nên bạn kiểm soát trực tiếp: xoá lá số
+      đã lưu trong ứng dụng, thu hồi quyền lịch trong cài đặt hệ điều hành,
+      hoặc gỡ ứng dụng để xoá sạch mọi thứ ứng dụng đã lưu. Chúng tôi không giữ
+      bản sao nào của những dữ liệu ấy.
+    </p>
+    <p>
+      Riêng số liệu sử dụng và báo cáo sự cố thì nằm ở Firebase. Gỡ ứng dụng là
+      máy ngừng gửi và mã định danh của bản cài mất đi. Muốn xoá phần đã gửi
+      trước đó, hãy viết cho <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a>
+      kèm mốc thời gian và kiểu máy để chúng tôi tìm và yêu cầu Google xoá.
     </p>
   </section>
 
@@ -270,9 +328,12 @@
   <hr class="chia">
 
   <div class="tomtat" id="en">
-    <strong>In short:</strong> Lịch Âm collects nothing, sends nothing and
-    shares nothing. The app makes no network connections. Everything you enter
-    stays on your device.
+    <strong>In short:</strong> everything you enter into Lịch Âm — birth
+    details, charts, settings — stays on your device and is never sent
+    anywhere. The app does send usage statistics and crash reports to Google
+    Firebase so problems can be found and fixed; those carry no name, email or
+    anything you typed, but they do carry an identifier for your installation.
+    No ads, no selling of data.
   </div>
 
   <section>
@@ -296,8 +357,8 @@
     </p>
     <p>
       Lunar dates, auspicious days, solar terms and Tử Vi charts are all
-      computed on the device from tables built into the app. No internet
-      connection is used.
+      computed on the device from tables built into the app; none of that needs
+      an internet connection.
     </p>
 
     <h3>Calendar permission</h3>
@@ -313,26 +374,56 @@
       working.
     </p>
 
+    <h3>What the app sends</h3>
+    <p>
+      Since version 1.1.1 the app uses <strong>Google Firebase</strong>
+      (Analytics, Crashlytics and Remote Config) to see which features get used
+      and to receive crash reports. What leaves the device: the screens you
+      open and in-app events, tagged with an identifier for your installation;
+      device model, OS version, app version, language and a country estimated
+      from your IP address; and crash traces showing where the app stopped.
+    </p>
+    <p>
+      It carries no name, email, phone number, birth details, saved chart or
+      calendar event content. The identifier belongs to the installation rather
+      than to you, and it disappears when you uninstall. Google processes this
+      as a service provider under the
+      <a href="https://firebase.google.com/support/privacy">Firebase privacy
+      policy</a>. Remote Config only fetches display settings — such as whether
+      the app icon follows a festive season — and uploads nothing about you.
+    </p>
+
     <h3>What the app does not do</h3>
     <p>
-      It collects no name, email, phone number or other identifier; no
-      location, contacts, photos, files or health data. There are no accounts
-      and no sign-in, no advertising, no in-app purchases, no third-party
-      analytics or tracking, and no sale, sharing or transfer of data to anyone.
+      It collects no name, email or phone number; no precise location,
+      contacts, photos, files or health data. It never sends your birth
+      details, saved charts or calendar event content. There are no accounts
+      and no sign-in, no advertising, no in-app purchases, no ad targeting, and
+      no sale or transfer of data to anyone beyond the Firebase services above.
     </p>
 
     <h3>Children</h3>
     <p>
-      The app is not directed at children and collects no data from anyone, so
-      no children's data is processed.
+      The app is not directed at children, does not ask anyone's age and
+      collects no personally identifying information. The usage statistics and
+      crash reports above are gathered at the device level; they are not used
+      to build profiles of people or to target advertising.
     </p>
 
     <h3>Your rights</h3>
     <p>
-      All data lives on your device, so you control it directly: delete saved
-      charts in the app, revoke the calendar permission in system settings, or
-      uninstall the app to erase everything it has stored. We hold no copy that
-      you would need to request deletion of.
+      The data you enter lives on your device, so you control it directly:
+      delete saved charts in the app, revoke the calendar permission in system
+      settings, or uninstall the app to erase everything it has stored. We hold
+      no copy of any of that.
+    </p>
+    <p>
+      Usage statistics and crash reports do sit with Firebase. Uninstalling
+      stops the sending and drops the installation identifier. To have earlier
+      records deleted, write to
+      <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a> with a rough
+      time and your device model so we can locate them and ask Google to erase
+      them.
     </p>
 
     <h3>Divination content</h3>
@@ -350,7 +441,7 @@
   </section>
 
   <footer>
-    Lịch Âm · com.bquminh.calendar · Cập nhật 14/08/2026
+    Lịch Âm · com.bquminh.calendar · Cập nhật 08/09/2026
   </footer>
 
 </div>
