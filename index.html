@@ -136,7 +136,7 @@
   <header>
     <div class="eyebrow">Lịch Âm · Lịch Việt &amp; Tử Vi</div>
     <h1>Chính sách bảo mật</h1>
-    <div class="ngay">Có hiệu lực từ 08/09/2026 · Phiên bản 1.1.1</div>
+    <div class="ngay">Có hiệu lực từ 23/09/2026 · Áp dụng từ bản có Premium và quảng cáo</div>
     <nav class="ngonngu" aria-label="Ngôn ngữ">
       <a href="#vi">Tiếng Việt</a>
       <a href="#en">English</a>
@@ -148,7 +148,10 @@
     sinh, lá số, cài đặt — đều nằm trong máy bạn và không được gửi đi đâu. Ứng
     dụng có gửi số liệu sử dụng và báo cáo sự cố cho Google Firebase để tìm và
     sửa lỗi; phần này không kèm tên, email hay nội dung bạn nhập, nhưng có kèm
-    một mã định danh riêng của bản cài. Không quảng cáo, không bán dữ liệu.
+    một mã định danh riêng của bản cài. Bản miễn phí có quảng cáo của Google
+    AdMob, dùng mã quảng cáo của máy khi bạn cho phép; mua Premium hay gỡ
+    quảng cáo thì Google Play hoặc App Store lo thanh toán, ứng dụng không
+    thấy thông tin thẻ của bạn. Không bán dữ liệu.
   </div>
 
   <section>
@@ -247,6 +250,77 @@
   </section>
 
   <section>
+    <h2>Quảng cáo</h2>
+    <p>
+      Bản miễn phí hiện một dải quảng cáo ở cuối màn hình, và một quảng cáo
+      video khi bạn tự chọn xem để mở tạm Premium. Quảng cáo do
+      <strong>Google AdMob</strong> cung cấp. Để chọn và đo quảng cáo, AdMob
+      nhận từ máy bạn:
+    </p>
+    <div class="bang">
+      <table>
+        <thead>
+          <tr><th>Dữ liệu</th><th>Vì sao cần</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mã quảng cáo của máy (Android Advertising ID, hoặc IDFA trên iPhone nếu bạn cho phép theo dõi)</td>
+            <td>Chọn quảng cáo hợp với bạn hơn và không lặp một quảng cáo quá nhiều lần</td>
+          </tr>
+          <tr>
+            <td>Địa chỉ IP, kiểu máy, hệ điều hành, ngôn ngữ; lượt xem và lượt bấm vào quảng cáo</td>
+            <td>Hiển thị đúng khổ, chống gian lận quảng cáo và tính tiền cho nhà quảng cáo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Quảng cáo không bao giờ nhận ngày sinh, lá số hay nội dung lịch của bạn.
+      Trên iPhone, ứng dụng chỉ dùng IDFA khi bạn bấm "Cho phép" ở hộp thoại
+      theo dõi của Apple; từ chối thì vẫn có quảng cáo nhưng không cá nhân hoá.
+      Ở Khu vực Kinh tế châu Âu, Vương quốc Anh và Thuỵ Sĩ, ứng dụng hỏi sự
+      đồng ý của bạn trước khi tải bất kỳ quảng cáo nào, và bạn đổi lại lựa
+      chọn được bất cứ lúc nào ở Cài đặt › Premium › Tuỳ chọn quyền riêng tư
+      quảng cáo. Trên Android bạn cũng có thể xoá hoặc đặt lại mã quảng cáo
+      trong phần cài đặt Google của máy.
+    </p>
+    <p>
+      Google xử lý dữ liệu này theo
+      <a href="https://policies.google.com/technologies/partner-sites">cách
+      Google dùng thông tin từ ứng dụng đối tác</a>. Mua gói Premium hoặc gói
+      gỡ quảng cáo là tắt hẳn dải quảng cáo.
+    </p>
+  </section>
+
+  <section>
+    <h2>Mua trong ứng dụng</h2>
+    <p>
+      Ứng dụng bán gói <strong>Premium</strong> (thuê bao tháng hoặc năm) và
+      gói <strong>gỡ quảng cáo</strong> (mua một lần). Việc thanh toán do
+      Google Play hoặc App Store thực hiện trọn vẹn: ứng dụng không bao giờ
+      thấy số thẻ, tên chủ thẻ hay địa chỉ thanh toán của bạn. Ứng dụng chỉ
+      nhận lại từ cửa hàng mã gói bạn đang sở hữu và mã giao dịch, và chỉ lưu
+      trên máy trạng thái "đã có Premium / đã gỡ quảng cáo" để khỏi phải hỏi
+      lại mỗi lần mở. Không có máy chủ nào của chúng tôi nhận các thông tin
+      này. Huỷ thuê bao làm trong phần quản lý thuê bao của Google Play hoặc
+      Apple ID.
+    </p>
+  </section>
+
+  <section>
+    <h2>Thông báo đẩy</h2>
+    <p>
+      Ứng dụng dùng <strong>Firebase Cloud Messaging</strong> để nhận thông
+      báo về dịp lễ, tính năng mới, và — chỉ khi bạn tự bật "Tin ưu đãi và
+      tính năng mới" — ưu đãi Premium. Để gửi được, Firebase cấp cho bản cài
+      một mã nhận thông báo và ghi nhận máy đang theo nhóm nào (mọi người,
+      ngôn ngữ tiếng Việt hay tiếng Anh, có nhận ưu đãi không). Thông báo gửi
+      theo nhóm chứ không nhắm riêng ai; chúng tôi không lưu mã ấy ở đâu khác.
+      Tắt thông báo của ứng dụng trong cài đặt hệ điều hành là ngừng nhận.
+    </p>
+  </section>
+
+  <section>
     <h2>Quyền truy cập lịch</h2>
     <p>
       Ứng dụng xin quyền <strong>đọc và ghi lịch</strong> để làm hai việc, và
@@ -277,8 +351,9 @@
       <li>Không thu thập vị trí chính xác, danh bạ, ảnh, tệp hay dữ liệu sức khoẻ.</li>
       <li>Không gửi đi ngày sinh, lá số hay nội dung sự kiện trong lịch của bạn.</li>
       <li>Không có tài khoản, không có đăng nhập.</li>
-      <li>Không quảng cáo, không mua trong ứng dụng.</li>
-      <li>Không dùng dữ liệu để nhắm quảng cáo, không bán và không chuyển cho bên nào khác ngoài Firebase nói trên.</li>
+      <li>Không đưa ngày sinh, lá số hay nội dung lịch vào quảng cáo hay đo lường.</li>
+      <li>Không thấy và không lưu thông tin thanh toán của bạn.</li>
+      <li>Không bán dữ liệu và không chuyển cho bên nào khác ngoài Google (Firebase, AdMob) và cửa hàng ứng dụng nói trên.</li>
     </ul>
   </section>
 
@@ -288,7 +363,8 @@
       Ứng dụng không hướng riêng tới trẻ em, không hỏi tuổi và không thu thập
       thông tin định danh cá nhân của bất kỳ ai. Số liệu sử dụng và báo cáo sự
       cố nói trên được thu thập ở mức thiết bị, không nhằm dựng hồ sơ về người
-      dùng và không dùng để nhắm quảng cáo.
+      dùng. Quảng cáo trong ứng dụng dành cho người lớn và không được nhắm tới
+      trẻ em.
     </p>
   </section>
 
@@ -333,7 +409,10 @@
     anywhere. The app does send usage statistics and crash reports to Google
     Firebase so problems can be found and fixed; those carry no name, email or
     anything you typed, but they do carry an identifier for your installation.
-    No ads, no selling of data.
+    The free version shows Google AdMob ads, which use your device's
+    advertising ID when you allow it; Premium and ad removal are paid through
+    Google Play or the App Store, and the app never sees your card details.
+    No selling of data.
   </div>
 
   <section>
@@ -393,21 +472,72 @@
       the app icon follows a festive season — and uploads nothing about you.
     </p>
 
+    <h3>Advertising</h3>
+    <p>
+      The free version shows a banner ad at the bottom of the screen, and a
+      video ad when you choose to watch one to unlock Premium for a while. Ads
+      are served by <strong>Google AdMob</strong>, which receives from your
+      device: the advertising ID (Android Advertising ID, or IDFA on iPhone if
+      you allow tracking), to pick more relevant ads and cap how often one
+      repeats; and IP address, device model, OS, language, plus ad views and
+      taps, to size ads correctly, prevent ad fraud and bill advertisers.
+    </p>
+    <p>
+      Ads never receive your birth details, charts or calendar contents. On
+      iPhone the IDFA is used only if you tap "Allow" in Apple's tracking
+      prompt; if you don't, you still see ads, just non-personalised ones. In
+      the European Economic Area, the UK and Switzerland the app asks for your
+      consent before loading any ad, and you can change your choice any time
+      under Settings › Premium › Ad privacy choices. On Android you can also
+      delete or reset the advertising ID in your device's Google settings.
+      Google handles this data as described in
+      <a href="https://policies.google.com/technologies/partner-sites">how
+      Google uses information from partner apps</a>. Buying Premium or ad
+      removal turns the banner off entirely.
+    </p>
+
+    <h3>In-app purchases</h3>
+    <p>
+      The app sells <strong>Premium</strong> (a monthly or yearly
+      subscription) and <strong>ad removal</strong> (a one-time purchase).
+      Payment is handled entirely by Google Play or the App Store: the app
+      never sees your card number, cardholder name or billing address. It only
+      gets back from the store which products you own and the transaction ID,
+      and keeps on the device whether you have Premium or ad removal so it
+      doesn't have to ask on every launch. None of this reaches any server of
+      ours. Cancel a subscription from your Google Play or Apple ID
+      subscription settings.
+    </p>
+
+    <h3>Push notifications</h3>
+    <p>
+      The app uses <strong>Firebase Cloud Messaging</strong> to receive
+      notifications about holidays, new features and — only if you turn on
+      "Offers and new features" — Premium offers. To deliver them, Firebase
+      gives your installation a messaging token and records which groups the
+      device follows (everyone, Vietnamese or English, offers or not).
+      Notifications go out to groups, not to individuals, and we keep the token
+      nowhere else. Turning off the app's notifications in your system
+      settings stops them.
+    </p>
+
     <h3>What the app does not do</h3>
     <p>
       It collects no name, email or phone number; no precise location,
       contacts, photos, files or health data. It never sends your birth
-      details, saved charts or calendar event content. There are no accounts
-      and no sign-in, no advertising, no in-app purchases, no ad targeting, and
-      no sale or transfer of data to anyone beyond the Firebase services above.
+      details, saved charts or calendar event content, and never feeds them
+      into ads or analytics. It never sees or stores your payment details.
+      There are no accounts and no sign-in, and no sale or transfer of data to
+      anyone beyond Google (Firebase, AdMob) and the app stores above.
     </p>
 
     <h3>Children</h3>
     <p>
       The app is not directed at children, does not ask anyone's age and
       collects no personally identifying information. The usage statistics and
-      crash reports above are gathered at the device level; they are not used
-      to build profiles of people or to target advertising.
+      crash reports above are gathered at the device level and are not used
+      to build profiles of people. Ads in the app are meant for adults and
+      are not directed at children.
     </p>
 
     <h3>Your rights</h3>
@@ -441,7 +571,7 @@
   </section>
 
   <footer>
-    Lịch Âm · com.bquminh.calendar · Cập nhật 08/09/2026
+    Lịch Âm · com.bquminh.calendar · Cập nhật 23/09/2026
   </footer>
 
 </div>
