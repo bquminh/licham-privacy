@@ -136,22 +136,24 @@
   <header>
     <div class="eyebrow">Lịch Âm · Lịch Việt &amp; Tử Vi</div>
     <h1>Chính sách bảo mật</h1>
-    <div class="ngay">Có hiệu lực từ 23/09/2026 · Áp dụng từ bản có Premium và quảng cáo</div>
+    <div class="ngay">Có hiệu lực từ 14/10/2026 · Áp dụng từ phiên bản 1.3.1, bản có đăng nhập và đồng bộ</div>
     <nav class="ngonngu" aria-label="Ngôn ngữ">
       <a href="#vi">Tiếng Việt</a>
       <a href="#en">English</a>
+      <a href="xoa-tai-khoan/">Xoá tài khoản</a>
     </nav>
   </header>
 
   <div class="tomtat" id="vi">
-    <strong>Tóm tắt:</strong> mọi thứ bạn nhập vào ứng dụng Lịch Âm — ngày
-    sinh, lá số, cài đặt — đều nằm trong máy bạn và không được gửi đi đâu. Ứng
-    dụng có gửi số liệu sử dụng và báo cáo sự cố cho Google Firebase để tìm và
-    sửa lỗi; phần này không kèm tên, email hay nội dung bạn nhập, nhưng có kèm
-    một mã định danh riêng của bản cài. Bản miễn phí có quảng cáo của Google
-    AdMob, dùng mã quảng cáo của máy khi bạn cho phép; mua Premium hay gỡ
-    quảng cáo thì Google Play hoặc App Store lo thanh toán, ứng dụng không
-    thấy thông tin thẻ của bạn. Không bán dữ liệu.
+    <strong>Tóm tắt:</strong> ngày sinh, lá số, cài đặt và các danh sách bạn
+    nhập được lưu trong máy, kèm một bản sao lưu trên máy chủ Google Firebase
+    của ứng dụng mà chỉ bạn đọc được. Bạn có thể tự chọn đăng nhập bằng Google
+    (hoặc Apple trên iPhone) để bản ấy đi theo bạn qua nhiều máy; khi đó ứng
+    dụng nhận tên, email và ảnh đại diện của tài khoản. Không đăng nhập thì
+    bản sao lưu chỉ gắn với một mã ẩn danh của bản cài. Ứng dụng còn gửi số
+    liệu sử dụng và báo cáo sự cố cho Firebase, có quảng cáo Google AdMob ở
+    bản miễn phí, và thanh toán qua Google Play hoặc App Store. Bạn xoá được
+    tài khoản cùng dữ liệu đồng bộ ngay trong ứng dụng. Không bán dữ liệu.
   </div>
 
   <section>
@@ -159,38 +161,59 @@
     <p>
       Ứng dụng <strong>Lịch Âm — Lịch Việt &amp; Tử Vi</strong>
       (mã ứng dụng <code>com.bquminh.calendar</code>) do cá nhân Bùi Quang Minh
-      phát triển và phát hành. Mọi câu hỏi về quyền riêng tư xin gửi tới
+      phát triển và phát hành (tên nhà phát triển trên Google Play:
+      QM Application). Mọi câu hỏi về quyền riêng tư xin gửi tới
       <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a>.
     </p>
   </section>
 
   <section>
-    <h2>Dữ liệu app lưu trên máy bạn</h2>
+    <h2>Dữ liệu bạn nhập vào ứng dụng</h2>
     <p>
       Những dữ liệu dưới đây nằm trong vùng nhớ riêng của ứng dụng trên thiết
-      bị. Chúng không được gửi đi đâu và sẽ mất khi bạn gỡ ứng dụng.
+      bị. Cột cuối cho biết dữ liệu nào còn có bản sao lưu trên máy chủ (xem
+      mục <a href="#dong-bo">Sao lưu và đồng bộ</a>).
     </p>
     <div class="bang">
       <table>
         <thead>
-          <tr><th>Dữ liệu</th><th>Vì sao cần</th></tr>
+          <tr><th>Dữ liệu</th><th>Vì sao cần</th><th>Sao lưu</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td>Cài đặt hiển thị: ngôn ngữ, giao diện sáng/tối, màu chủ đạo, ngày bắt đầu tuần</td>
-            <td>Giữ nguyên lựa chọn của bạn cho lần mở sau</td>
+            <td>Ngày giờ sinh, giới tính và tên bạn nhập để lập lá số tử vi</td>
+            <td>Lập lá số và mở lại mà không phải nhập lại</td>
+            <td>Có</td>
           </tr>
           <tr>
-            <td>Ngày giờ sinh và giới tính bạn nhập để lập lá số tử vi</td>
-            <td>Lập lá số và mở lại lá số cũ mà không phải nhập lại</td>
+            <td>Danh sách lá số đã lưu, kèm tên bạn tự đặt</td>
+            <td>Xem lại nhiều lá số</td>
+            <td>Có</td>
           </tr>
           <tr>
-            <td>Danh sách lá số bạn đã lưu, kèm tên bạn tự đặt</td>
-            <td>Cho phép xem lại nhiều lá số</td>
+            <td>Các cung đã mở luận giải bằng cách xem quảng cáo</td>
+            <td>Không bắt bạn xem quảng cáo lại cho cùng một cung</td>
+            <td>Có</td>
           </tr>
           <tr>
-            <td>Lựa chọn lịch nào được bật để hiển thị sự kiện</td>
-            <td>Nhớ những lịch bạn muốn thấy trong màn lịch</td>
+            <td>Cài đặt hiển thị: ngôn ngữ, giao diện sáng/tối, màu chủ đạo, ngày bắt đầu tuần, độ trong của widget</td>
+            <td>Giữ nguyên lựa chọn của bạn</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td>Cài đặt nhắc: loại ngày cần nhắc, nhắc trước mấy ngày, giờ nhắc</td>
+            <td>Gửi thông báo đúng lúc bạn muốn</td>
+            <td>Có, trừ công tắc bật/tắt thông báo</td>
+          </tr>
+          <tr>
+            <td>Danh sách lựa chọn ở Quyết định nhanh và các danh sách bạn đã lưu; hai năm sinh ở Tuổi hợp</td>
+            <td>Mở lại đúng như lần trước</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td>Lựa chọn lịch nào được bật để hiển thị sự kiện; vị trí bong bóng nổi</td>
+            <td>Nhớ cách bạn bày trên máy này</td>
+            <td>Không</td>
           </tr>
         </tbody>
       </table>
@@ -201,13 +224,62 @@
     </p>
   </section>
 
-  <section>
-    <h2>Dữ liệu ứng dụng gửi đi</h2>
+  <section id="dong-bo">
+    <h2>Sao lưu và đồng bộ</h2>
     <p>
-      Từ phiên bản 1.1.1, ứng dụng dùng <strong>Google Firebase</strong>
-      (Analytics, Crashlytics và Remote Config) để biết tính năng nào được
-      dùng và để nhận báo cáo khi ứng dụng gặp sự cố. Đây là những thứ được
-      gửi đi:
+      Ứng dụng giữ một bản sao của những dữ liệu đánh dấu "Có" ở bảng trên
+      trong <strong>Google Cloud Firestore</strong>, thuộc dự án Firebase của
+      ứng dụng, đặt tại Singapore. Dữ liệu được mã hoá khi truyền đi và khi
+      lưu. Luật truy cập của máy chủ chỉ cho đúng người dùng sở hữu bản sao
+      đọc và ghi nó. Nhà phát triển có quyền quản trị dự án về mặt kỹ thuật,
+      nhưng chỉ đụng tới dữ liệu của bạn khi xử lý yêu cầu của chính bạn (ví
+      dụ yêu cầu xoá) hoặc khi pháp luật buộc.
+    </p>
+    <ul>
+      <li><strong>Chưa đăng nhập:</strong> bản sao lưu gắn với một mã người
+        dùng ẩn danh do Firebase Authentication cấp cho bản cài, không kèm tên
+        hay email. Gỡ ứng dụng là mất mã ấy.</li>
+      <li><strong>Đã đăng nhập:</strong> bản sao lưu gắn với tài khoản của
+        bạn, nên mọi máy đăng nhập cùng tài khoản sẽ thấy cùng dữ liệu và thay
+        đổi ở máy này hiện ở máy kia. Lần đầu đăng nhập trên một máy đã có dữ
+        liệu, ứng dụng gộp dữ liệu trong máy vào tài khoản chứ không xoá.</li>
+    </ul>
+    <p>
+      Bản sao được giữ cho tới khi bạn xoá tài khoản hoặc yêu cầu xoá (xem
+      mục <a href="#quyen">Quyền của bạn</a>).
+    </p>
+  </section>
+
+  <section>
+    <h2>Đăng nhập bằng Google hoặc Apple</h2>
+    <p>
+      Đăng nhập là tuỳ chọn, ở Cài đặt › Tài khoản; không đăng nhập thì mọi
+      tính năng vẫn dùng được. Khi bạn đăng nhập, ứng dụng nhận qua
+      <strong>Firebase Authentication</strong>:
+    </p>
+    <ul>
+      <li>Với Google: tên hiển thị, địa chỉ email, ảnh đại diện và mã tài
+        khoản Google.</li>
+      <li>Với Apple (chỉ trên iPhone, iPad): mã tài khoản Apple, email (có thể
+        là địa chỉ chuyển tiếp ẩn danh của Apple nếu bạn chọn ẩn email) và tên
+        nếu bạn chọn chia sẻ.</li>
+    </ul>
+    <p>
+      Những thông tin này chỉ dùng để nhận ra bạn khi đồng bộ và để hiện tên,
+      ảnh của bạn ở màn Tài khoản. Ứng dụng không nhận mật khẩu, không xin
+      quyền đọc Gmail, Google Drive, danh bạ hay lịch Google qua lần đăng nhập
+      này, không dùng tên hay email cho quảng cáo hay số liệu phân tích, và
+      không gửi email tiếp thị. Đăng xuất thì dữ liệu ở lại máy và máy quay về
+      sao lưu ẩn danh như trước.
+    </p>
+  </section>
+
+  <section>
+    <h2>Số liệu sử dụng và báo cáo sự cố</h2>
+    <p>
+      Ứng dụng dùng <strong>Google Firebase</strong> (Analytics, Crashlytics và
+      Remote Config) để biết tính năng nào được dùng và để nhận báo cáo khi
+      ứng dụng gặp sự cố:
     </p>
     <div class="bang">
       <table>
@@ -216,7 +288,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Màn hình bạn mở và các sự kiện dùng ứng dụng, kèm một mã định danh riêng của mỗi bản cài</td>
+            <td>Màn hình bạn mở và các sự kiện dùng ứng dụng (ví dụ đổi màu, lưu lá số, đăng nhập), kèm một mã định danh riêng của mỗi bản cài</td>
             <td>Biết phần nào thực sự được dùng để còn ưu tiên sửa và làm tiếp</td>
           </tr>
           <tr>
@@ -231,21 +303,34 @@
       </table>
     </div>
     <p>
-      Phần này <strong>không</strong> kèm tên, email, số điện thoại, ngày sinh
+      Phần này <strong>không</strong> kèm tên, email, mã tài khoản, ngày sinh
       hay lá số bạn nhập, cũng không kèm nội dung sự kiện trong lịch của bạn.
-      Mã định danh nói trên gắn với bản cài chứ không gắn với con người bạn, và
-      mất đi khi bạn gỡ ứng dụng.
+      Mã định danh nói trên gắn với bản cài chứ không gắn với tài khoản của
+      bạn, và mất đi khi bạn gỡ ứng dụng. Remote Config chỉ lấy về một ít cấu
+      hình hiển thị, ví dụ biểu tượng ứng dụng có đổi theo mùa lễ hay không,
+      không gửi dữ liệu của bạn lên.
     </p>
     <p>
-      Dữ liệu này do Google xử lý với vai trò bên cung cấp dịch vụ, theo
+      Google xử lý các dữ liệu Firebase nói trong chính sách này với vai trò
+      bên cung cấp dịch vụ, theo
       <a href="https://firebase.google.com/support/privacy">chính sách quyền
-      riêng tư của Firebase</a>. Chúng tôi không bán và không chuyển nó cho bên
-      nào khác.
+      riêng tư của Firebase</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Góp ý và nội dung tải về</h2>
+    <p>
+      Khi bạn gửi góp ý ở Cài đặt › Góp ý, ứng dụng gửi lên Firestore nội dung
+      bạn viết, thông tin liên hệ nếu bạn tự điền, phiên bản ứng dụng, hệ điều
+      hành, ngôn ngữ và mã người dùng của máy, để chúng tôi đọc và trả lời.
+      Góp ý không ai đọc được ngoài nhà phát triển.
     </p>
     <p>
-      Ứng dụng cũng hỏi Firebase Remote Config một ít cấu hình hiển thị, ví dụ
-      biểu tượng ứng dụng có đổi theo mùa lễ hay không. Lượt hỏi ấy chỉ lấy
-      cấu hình về, không gửi dữ liệu của bạn lên.
+      Danh sách điểm đến được tải về từ Firestore, không kèm dữ liệu gì của
+      bạn. Ảnh minh hoạ điểm đến được tải thẳng từ Wikimedia Commons và Flickr;
+      như mọi lần tải ảnh trên mạng, máy chủ của họ thấy địa chỉ IP và loại
+      thiết bị của bạn.
     </p>
   </section>
 
@@ -253,7 +338,7 @@
     <h2>Quảng cáo</h2>
     <p>
       Bản miễn phí hiện một dải quảng cáo ở cuối màn hình, và một quảng cáo
-      video khi bạn tự chọn xem để mở tạm Premium. Quảng cáo do
+      video khi bạn tự chọn xem để mở luận giải một cung. Quảng cáo do
       <strong>Google AdMob</strong> cung cấp. Để chọn và đo quảng cáo, AdMob
       nhận từ máy bạn:
     </p>
@@ -275,14 +360,14 @@
       </table>
     </div>
     <p>
-      Quảng cáo không bao giờ nhận ngày sinh, lá số hay nội dung lịch của bạn.
-      Trên iPhone, ứng dụng chỉ dùng IDFA khi bạn bấm "Cho phép" ở hộp thoại
-      theo dõi của Apple; từ chối thì vẫn có quảng cáo nhưng không cá nhân hoá.
-      Ở Khu vực Kinh tế châu Âu, Vương quốc Anh và Thuỵ Sĩ, ứng dụng hỏi sự
-      đồng ý của bạn trước khi tải bất kỳ quảng cáo nào, và bạn đổi lại lựa
-      chọn được bất cứ lúc nào ở Cài đặt › Premium › Tuỳ chọn quyền riêng tư
-      quảng cáo. Trên Android bạn cũng có thể xoá hoặc đặt lại mã quảng cáo
-      trong phần cài đặt Google của máy.
+      Quảng cáo không bao giờ nhận tên, email, ngày sinh, lá số hay nội dung
+      lịch của bạn. Trên iPhone, ứng dụng chỉ dùng IDFA khi bạn bấm "Cho phép"
+      ở hộp thoại theo dõi của Apple; từ chối thì vẫn có quảng cáo nhưng không
+      cá nhân hoá. Ở Khu vực Kinh tế châu Âu, Vương quốc Anh và Thuỵ Sĩ, ứng
+      dụng hỏi sự đồng ý của bạn trước khi tải bất kỳ quảng cáo nào, và bạn
+      đổi lại lựa chọn được bất cứ lúc nào ở Cài đặt › Premium › Tuỳ chọn quyền
+      riêng tư quảng cáo. Trên Android bạn cũng có thể xoá hoặc đặt lại mã
+      quảng cáo trong phần cài đặt Google của máy.
     </p>
     <p>
       Google xử lý dữ liệu này theo
@@ -300,10 +385,10 @@
       Google Play hoặc App Store thực hiện trọn vẹn: ứng dụng không bao giờ
       thấy số thẻ, tên chủ thẻ hay địa chỉ thanh toán của bạn. Ứng dụng chỉ
       nhận lại từ cửa hàng mã gói bạn đang sở hữu và mã giao dịch, và chỉ lưu
-      trên máy trạng thái "đã có Premium / đã gỡ quảng cáo" để khỏi phải hỏi
-      lại mỗi lần mở. Không có máy chủ nào của chúng tôi nhận các thông tin
-      này. Huỷ thuê bao làm trong phần quản lý thuê bao của Google Play hoặc
-      Apple ID.
+      trên máy trạng thái "đã có Premium / đã gỡ quảng cáo". Gói đã mua đi
+      theo tài khoản cửa hàng của bạn, không theo tài khoản đăng nhập trong
+      ứng dụng, và không lên máy chủ nào của chúng tôi. Huỷ thuê bao làm trong
+      phần quản lý thuê bao của Google Play hoặc Apple ID.
     </p>
   </section>
 
@@ -332,10 +417,10 @@
     </ul>
     <p>
       Nội dung sự kiện chỉ được đọc ra để hiển thị trong ứng dụng. Ứng dụng
-      không sao chép, không lưu lại và không gửi nội dung đó đi đâu. Sự kiện
-      bạn tạo được ghi thẳng vào tài khoản lịch bạn chọn (ví dụ Google,
-      iCloud) và từ đó do nhà cung cấp tài khoản ấy quản lý theo chính sách
-      riêng của họ.
+      không sao chép, không lưu lại, không sao lưu và không gửi nội dung đó đi
+      đâu. Sự kiện bạn tạo được ghi thẳng vào tài khoản lịch bạn chọn (ví dụ
+      Google, iCloud) và từ đó do nhà cung cấp tài khoản ấy quản lý theo chính
+      sách riêng của họ.
     </p>
     <p>
       Bạn có thể từ chối hoặc thu hồi quyền này bất cứ lúc nào trong phần cài
@@ -347,41 +432,47 @@
   <section>
     <h2>Những gì ứng dụng không làm</h2>
     <ul>
-      <li>Không thu thập tên, email hay số điện thoại của bạn.</li>
+      <li>Không thu thập số điện thoại; chỉ nhận tên và email khi bạn tự đăng nhập.</li>
       <li>Không thu thập vị trí chính xác, danh bạ, ảnh, tệp hay dữ liệu sức khoẻ.</li>
-      <li>Không gửi đi ngày sinh, lá số hay nội dung sự kiện trong lịch của bạn.</li>
-      <li>Không có tài khoản, không có đăng nhập.</li>
-      <li>Không đưa ngày sinh, lá số hay nội dung lịch vào quảng cáo hay đo lường.</li>
+      <li>Không sao lưu và không gửi đi nội dung sự kiện trong lịch của bạn.</li>
+      <li>Không đưa tên, email, ngày sinh, lá số hay nội dung lịch vào quảng cáo hay số liệu phân tích.</li>
       <li>Không thấy và không lưu thông tin thanh toán của bạn.</li>
-      <li>Không bán dữ liệu và không chuyển cho bên nào khác ngoài Google (Firebase, AdMob) và cửa hàng ứng dụng nói trên.</li>
+      <li>Không bán dữ liệu và không chuyển cho bên nào khác ngoài Google (Firebase, AdMob), Apple khi bạn đăng nhập bằng Apple, và cửa hàng ứng dụng nói trên.</li>
     </ul>
   </section>
 
   <section>
     <h2>Trẻ em</h2>
     <p>
-      Ứng dụng không hướng riêng tới trẻ em, không hỏi tuổi và không thu thập
-      thông tin định danh cá nhân của bất kỳ ai. Số liệu sử dụng và báo cáo sự
-      cố nói trên được thu thập ở mức thiết bị, không nhằm dựng hồ sơ về người
-      dùng. Quảng cáo trong ứng dụng dành cho người lớn và không được nhắm tới
-      trẻ em.
+      Ứng dụng không hướng riêng tới trẻ em, không hỏi tuổi và không cố ý thu
+      thập dữ liệu của trẻ dưới 13 tuổi. Tên và email chỉ được nhận khi người
+      dùng tự đăng nhập. Số liệu sử dụng và báo cáo sự cố được thu thập ở mức
+      thiết bị, không nhằm dựng hồ sơ về người dùng. Quảng cáo trong ứng dụng
+      dành cho người lớn và không được nhắm tới trẻ em.
     </p>
   </section>
 
-  <section>
-    <h2>Quyền của bạn</h2>
-    <p>
-      Dữ liệu bạn nhập nằm trên máy bạn nên bạn kiểm soát trực tiếp: xoá lá số
-      đã lưu trong ứng dụng, thu hồi quyền lịch trong cài đặt hệ điều hành,
-      hoặc gỡ ứng dụng để xoá sạch mọi thứ ứng dụng đã lưu. Chúng tôi không giữ
-      bản sao nào của những dữ liệu ấy.
-    </p>
-    <p>
-      Riêng số liệu sử dụng và báo cáo sự cố thì nằm ở Firebase. Gỡ ứng dụng là
-      máy ngừng gửi và mã định danh của bản cài mất đi. Muốn xoá phần đã gửi
-      trước đó, hãy viết cho <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a>
-      kèm mốc thời gian và kiểu máy để chúng tôi tìm và yêu cầu Google xoá.
-    </p>
+  <section id="quyen">
+    <h2>Quyền của bạn và cách xoá dữ liệu</h2>
+    <ul>
+      <li><strong>Xem và sửa:</strong> mọi dữ liệu bạn nhập đều xem, sửa,
+        xoá được ngay trong ứng dụng (lá số đã lưu, các danh sách, cài đặt);
+        thay đổi tự đồng bộ lên bản sao lưu.</li>
+      <li><strong>Xoá tài khoản trong ứng dụng:</strong> Cài đặt › Tài khoản ›
+        Xoá tài khoản. Bản sao trên máy chủ và tài khoản đăng nhập bị xoá
+        ngay; dữ liệu trong máy vẫn giữ, gỡ ứng dụng để xoá nốt.</li>
+      <li><strong>Không còn ứng dụng:</strong> làm theo trang
+        <a href="xoa-tai-khoan/">Yêu cầu xoá tài khoản</a> — gửi email từ
+        địa chỉ email của tài khoản, chúng tôi xoá trong vòng 30 ngày và báo
+        lại.</li>
+      <li><strong>Bản sao lưu khi chưa đăng nhập:</strong> đăng nhập rồi xoá
+        tài khoản như trên — bản sao lưu ẩn danh của máy được gộp vào tài
+        khoản và bị xoá cùng.</li>
+      <li><strong>Số liệu sử dụng, báo cáo sự cố và góp ý:</strong> viết cho
+        <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a> kèm mốc
+        thời gian và kiểu máy để chúng tôi tìm và xoá, hoặc yêu cầu Google
+        xoá.</li>
+    </ul>
   </section>
 
   <section>
@@ -398,21 +489,24 @@
     <p>
       Nếu có phiên bản nào bắt đầu xử lý dữ liệu khác đi, chính sách này sẽ
       được cập nhật kèm ngày hiệu lực mới trước khi phiên bản đó phát hành.
+      Bản trước (23/09/2026) chưa nói tới việc sao lưu lá số và gửi góp ý lên
+      Firestore; bản này bổ sung cả hai cùng với phần đăng nhập.
     </p>
   </section>
 
   <hr class="chia">
 
   <div class="tomtat" id="en">
-    <strong>In short:</strong> everything you enter into Lịch Âm — birth
-    details, charts, settings — stays on your device and is never sent
-    anywhere. The app does send usage statistics and crash reports to Google
-    Firebase so problems can be found and fixed; those carry no name, email or
-    anything you typed, but they do carry an identifier for your installation.
-    The free version shows Google AdMob ads, which use your device's
-    advertising ID when you allow it; Premium and ad removal are paid through
-    Google Play or the App Store, and the app never sees your card details.
-    No selling of data.
+    <strong>In short:</strong> the birth details, charts, settings and lists
+    you enter are stored on your device, with a backup copy on the app's
+    Google Firebase server that only you can read. You can choose to sign in
+    with Google (or Apple on iPhone) so that copy follows you across devices;
+    the app then receives your account's name, email and profile photo.
+    Without signing in, the backup is tied only to an anonymous identifier for
+    your installation. The app also sends usage statistics and crash reports
+    to Firebase, shows Google AdMob ads in the free version, and takes payment
+    through Google Play or the App Store. You can delete your account and its
+    synced data from inside the app. No selling of data.
   </div>
 
   <section>
@@ -421,18 +515,23 @@
     <p>
       <strong>Lịch Âm — Lịch Việt &amp; Tử Vi</strong>
       (<code>com.bquminh.calendar</code>) is developed and published by
-      Bui Quang Minh. For any privacy question, write to
+      Bui Quang Minh (developer name on Google Play: QM Application). For any
+      privacy question, write to
       <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a>.
     </p>
 
-    <h3>Data stored on your device</h3>
+    <h3>Data you enter</h3>
     <p>
-      The app keeps the following in its private storage on your device. None
-      of it leaves the device, and all of it disappears when you uninstall:
-      display settings (language, light or dark theme, accent colour, first day
-      of the week); the birth date, hour and gender you enter for a Tử Vi
-      chart; the charts you choose to save, with the names you give them; and
-      which of your calendars are switched on for display.
+      The app keeps the following in its private storage on your device: the
+      birth date, hour, gender and name you enter for a Tử Vi chart; charts you
+      save, with the names you give them; palaces you unlocked by watching an
+      ad; display settings (language, light or dark theme, accent colour, first
+      day of the week, widget transparency); reminder settings (which days,
+      how many days ahead, at what time); your Quick pick lists and saved
+      lists; the two birth years in Age compatibility; which calendars are
+      switched on for display; and where the floating bubble sits. Everything
+      in that list except the calendar selection, the bubble position and the
+      on/off switch for notifications is also backed up, as described next.
     </p>
     <p>
       Lunar dates, auspicious days, solar terms and Tử Vi charts are all
@@ -440,56 +539,99 @@
       an internet connection.
     </p>
 
-    <h3>Calendar permission</h3>
+    <h3>Backup and sync</h3>
     <p>
-      The app requests read and write access to your calendars for two purposes
-      only: to show events from the calendars already on your device alongside
-      the lunar date, and to create, edit or delete notes and events when you
-      explicitly ask it to. Event contents are read for display only — never
-      copied, stored or transmitted. Events you create are written into the
-      calendar account you pick (for example Google or iCloud) and are then
-      governed by that provider's own policy. You can refuse or revoke this
-      permission at any time in your system settings; the rest of the app keeps
-      working.
+      The backup copy lives in <strong>Google Cloud Firestore</strong>, in the
+      app's own Firebase project, located in Singapore. It is encrypted in
+      transit and at rest. Server access rules let only the user who owns a
+      copy read or write it. The developer has administrative access to the
+      project for technical reasons, but only touches your data to handle a
+      request from you (such as a deletion request) or when required by law.
+    </p>
+    <p>
+      If you have not signed in, the copy is tied to an anonymous user
+      identifier that Firebase Authentication issues to your installation, with
+      no name or email attached; uninstalling loses that identifier. If you
+      have signed in, the copy is tied to your account, so every device signed
+      in to the same account sees the same data and changes made on one show
+      up on the others. The first time you sign in on a device that already
+      has data, the app merges that data into your account rather than
+      deleting it. The copy is kept until you delete your account or ask us to
+      delete it.
     </p>
 
-    <h3>What the app sends</h3>
+    <h3>Signing in with Google or Apple</h3>
     <p>
-      Since version 1.1.1 the app uses <strong>Google Firebase</strong>
-      (Analytics, Crashlytics and Remote Config) to see which features get used
-      and to receive crash reports. What leaves the device: the screens you
-      open and in-app events, tagged with an identifier for your installation;
-      device model, OS version, app version, language and a country estimated
-      from your IP address; and crash traces showing where the app stopped.
+      Signing in is optional, under Settings › Account; every feature works
+      without it. When you sign in, the app receives through
+      <strong>Firebase Authentication</strong>: with Google, your display
+      name, email address, profile photo and Google account ID; with Apple
+      (iPhone and iPad only), your Apple account ID, an email address (which
+      may be Apple's private relay address if you choose to hide yours) and
+      your name if you choose to share it.
     </p>
     <p>
-      It carries no name, email, phone number, birth details, saved chart or
+      This is used only to recognise you when syncing and to show your name and
+      photo on the Account screen. The app never receives your password, does
+      not ask to read your Gmail, Google Drive, contacts or Google Calendar
+      through this sign-in, never uses your name or email for ads or analytics,
+      and sends no marketing email. Signing out leaves your data on the device
+      and returns the device to anonymous backup.
+    </p>
+
+    <h3>Usage statistics and crash reports</h3>
+    <p>
+      The app uses <strong>Google Firebase</strong> (Analytics, Crashlytics and
+      Remote Config) to see which features get used and to receive crash
+      reports. What leaves the device: the screens you open and in-app events
+      (such as changing the colour theme, saving a chart or signing in), tagged
+      with an identifier for your installation; device model, OS version, app
+      version, language and a country estimated from your IP address; and
+      crash traces showing where the app stopped.
+    </p>
+    <p>
+      It carries no name, email, account ID, birth details, saved chart or
       calendar event content. The identifier belongs to the installation rather
-      than to you, and it disappears when you uninstall. Google processes this
-      as a service provider under the
+      than to your account, and it disappears when you uninstall. Remote Config
+      only fetches display settings — such as whether the app icon follows a
+      festive season — and uploads nothing about you. Google processes the
+      Firebase data described in this policy as a service provider under the
       <a href="https://firebase.google.com/support/privacy">Firebase privacy
-      policy</a>. Remote Config only fetches display settings — such as whether
-      the app icon follows a festive season — and uploads nothing about you.
+      policy</a>.
+    </p>
+
+    <h3>Feedback and downloaded content</h3>
+    <p>
+      When you send feedback from Settings › Feedback, the app uploads to
+      Firestore what you wrote, any contact details you chose to add, the app
+      version, operating system, language and the device's user identifier, so
+      we can read and reply. Nobody but the developer can read feedback.
+    </p>
+    <p>
+      The list of destinations is downloaded from Firestore and carries none of
+      your data. Destination photos load directly from Wikimedia Commons and
+      Flickr; as with any image on the web, their servers see your IP address
+      and device type.
     </p>
 
     <h3>Advertising</h3>
     <p>
       The free version shows a banner ad at the bottom of the screen, and a
-      video ad when you choose to watch one to unlock Premium for a while. Ads
-      are served by <strong>Google AdMob</strong>, which receives from your
+      video ad when you choose to watch one to unlock the reading of a palace.
+      Ads are served by <strong>Google AdMob</strong>, which receives from your
       device: the advertising ID (Android Advertising ID, or IDFA on iPhone if
       you allow tracking), to pick more relevant ads and cap how often one
       repeats; and IP address, device model, OS, language, plus ad views and
       taps, to size ads correctly, prevent ad fraud and bill advertisers.
     </p>
     <p>
-      Ads never receive your birth details, charts or calendar contents. On
-      iPhone the IDFA is used only if you tap "Allow" in Apple's tracking
-      prompt; if you don't, you still see ads, just non-personalised ones. In
-      the European Economic Area, the UK and Switzerland the app asks for your
-      consent before loading any ad, and you can change your choice any time
-      under Settings › Premium › Ad privacy choices. On Android you can also
-      delete or reset the advertising ID in your device's Google settings.
+      Ads never receive your name, email, birth details, charts or calendar
+      contents. On iPhone the IDFA is used only if you tap "Allow" in Apple's
+      tracking prompt; if you don't, you still see ads, just non-personalised
+      ones. In the European Economic Area, the UK and Switzerland the app asks
+      for your consent before loading any ad, and you can change your choice
+      any time under Settings › Premium › Ad privacy choices. On Android you can
+      also delete or reset the advertising ID in your device's Google settings.
       Google handles this data as described in
       <a href="https://policies.google.com/technologies/partner-sites">how
       Google uses information from partner apps</a>. Buying Premium or ad
@@ -503,10 +645,10 @@
       Payment is handled entirely by Google Play or the App Store: the app
       never sees your card number, cardholder name or billing address. It only
       gets back from the store which products you own and the transaction ID,
-      and keeps on the device whether you have Premium or ad removal so it
-      doesn't have to ask on every launch. None of this reaches any server of
-      ours. Cancel a subscription from your Google Play or Apple ID
-      subscription settings.
+      and keeps on the device whether you have Premium or ad removal.
+      Purchases follow your store account, not the account you sign in with in
+      the app, and never reach any server of ours. Cancel a subscription from
+      your Google Play or Apple ID subscription settings.
     </p>
 
     <h3>Push notifications</h3>
@@ -521,39 +663,56 @@
       settings stops them.
     </p>
 
+    <h3>Calendar permission</h3>
+    <p>
+      The app requests read and write access to your calendars for two purposes
+      only: to show events from the calendars already on your device alongside
+      the lunar date, and to create, edit or delete notes and events when you
+      explicitly ask it to. Event contents are read for display only — never
+      copied, backed up, stored or transmitted. Events you create are written
+      into the calendar account you pick (for example Google or iCloud) and are
+      then governed by that provider's own policy. You can refuse or revoke
+      this permission at any time in your system settings; the rest of the app
+      keeps working.
+    </p>
+
     <h3>What the app does not do</h3>
     <p>
-      It collects no name, email or phone number; no precise location,
-      contacts, photos, files or health data. It never sends your birth
-      details, saved charts or calendar event content, and never feeds them
+      It collects no phone number, and receives your name and email only if
+      you sign in. It collects no precise location, contacts, photos, files or
+      health data. It never backs up or sends your calendar event content, and
+      never feeds your name, email, birth details, charts or calendar content
       into ads or analytics. It never sees or stores your payment details.
-      There are no accounts and no sign-in, and no sale or transfer of data to
-      anyone beyond Google (Firebase, AdMob) and the app stores above.
+      There is no sale or transfer of data to anyone beyond Google (Firebase,
+      AdMob), Apple when you sign in with Apple, and the app stores above.
     </p>
 
     <h3>Children</h3>
     <p>
-      The app is not directed at children, does not ask anyone's age and
-      collects no personally identifying information. The usage statistics and
-      crash reports above are gathered at the device level and are not used
-      to build profiles of people. Ads in the app are meant for adults and
-      are not directed at children.
+      The app is not directed at children, does not ask anyone's age and does
+      not knowingly collect data from children under 13. Names and emails are
+      received only when a user chooses to sign in. Usage statistics and crash
+      reports are gathered at the device level and are not used to build
+      profiles of people. Ads in the app are meant for adults and are not
+      directed at children.
     </p>
 
-    <h3>Your rights</h3>
+    <h3>Your rights and deleting your data</h3>
     <p>
-      The data you enter lives on your device, so you control it directly:
-      delete saved charts in the app, revoke the calendar permission in system
-      settings, or uninstall the app to erase everything it has stored. We hold
-      no copy of any of that.
-    </p>
-    <p>
-      Usage statistics and crash reports do sit with Firebase. Uninstalling
-      stops the sending and drops the installation identifier. To have earlier
-      records deleted, write to
+      You can view, edit and delete everything you entered from inside the app
+      (saved charts, lists, settings), and changes sync to the backup. To
+      delete your account, go to Settings › Account › Delete account: the copy
+      on our server and your sign-in account are deleted straight away, while
+      the data on your device stays until you uninstall. If you no longer have
+      the app, follow the <a href="xoa-tai-khoan/#en">account deletion
+      request</a> page — email us from your account's address and we delete it
+      within 30 days and confirm. To delete the anonymous backup of a device
+      that never signed in, sign in and then delete the account as above; the
+      anonymous backup is merged into the account and deleted with it. For
+      usage statistics, crash reports or feedback, write to
       <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a> with a rough
-      time and your device model so we can locate them and ask Google to erase
-      them.
+      time and your device model so we can locate and delete them, or ask
+      Google to.
     </p>
 
     <h3>Divination content</h3>
@@ -566,12 +725,14 @@
     <h3>Changes</h3>
     <p>
       If a future version starts handling data differently, this policy will be
-      updated with a new effective date before that version ships.
+      updated with a new effective date before that version ships. The previous
+      version (23 September 2026) did not mention the chart backup or feedback
+      sent to Firestore; this version adds both, together with sign-in.
     </p>
   </section>
 
   <footer>
-    Lịch Âm · com.bquminh.calendar · Cập nhật 23/09/2026
+    Lịch Âm · com.bquminh.calendar · Cập nhật 14/10/2026
   </footer>
 
 </div>

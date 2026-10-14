@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xoá tài khoản · Lịch Âm</title>
+<meta name="description" content="Cách xoá tài khoản và dữ liệu đồng bộ của ứng dụng Lịch Âm — Lịch Việt &amp; Tử Vi.">
+<style>
+  /* Bảng màu lấy từ chính app: đỏ sơn mài trên nền ngà ấm.
+     Sáng là mặc định, tối chỉ định nghĩa lại token. */
+  :root {
+    --nen: #FCFAF8;
+    --the: #FFFFFF;
+    --vien: #E8DFDA;
+    --chu: #221C1A;
+    --chu-mo: #6B615C;
+    --nhan: #9A2B25;
+    --tot-nen: #EDF5EF;
+    --tot-vien: #C9E0D0;
+    --tot-chu: #1C5B39;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --nen: #14100F;
+      --the: #1B1615;
+      --vien: #302826;
+      --chu: #EDE7E3;
+      --chu-mo: #A2948D;
+      --nhan: #E68A7E;
+      --tot-nen: #16221B;
+      --tot-vien: #2C4536;
+      --tot-chu: #8FD3A8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --nen: #14100F;
+    --the: #1B1615;
+    --vien: #302826;
+    --chu: #EDE7E3;
+    --chu-mo: #A2948D;
+    --nhan: #E68A7E;
+    --tot-nen: #16221B;
+    --tot-vien: #2C4536;
+    --tot-chu: #8FD3A8;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--nen);
+    color: var(--chu);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .khung {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  header { display: flex; flex-direction: column; gap: .75rem; }
+  .eyebrow {
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--nhan);
+    font-weight: 600;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+  }
+  .ngay { color: var(--chu-mo); font-size: .95rem; }
+
+  .ngonngu { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .ngonngu a {
+    font-size: .85rem;
+    text-decoration: none;
+    color: var(--chu-mo);
+    border: 1px solid var(--vien);
+    border-radius: 999px;
+    padding: .35rem .85rem;
+    background: var(--the);
+  }
+  .ngonngu a:hover, .ngonngu a:focus-visible { color: var(--nhan); border-color: var(--nhan); }
+
+  .tomtat {
+    background: var(--tot-nen);
+    border: 1px solid var(--tot-vien);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    color: var(--tot-chu);
+    font-size: 1.02rem;
+  }
+  .tomtat strong { font-weight: 700; }
+
+  section { display: flex; flex-direction: column; gap: .85rem; }
+  h2 {
+    margin: 0;
+    font-size: 1.02rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--nhan);
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--vien);
+  }
+  h3 { margin: .5rem 0 0; font-size: 1.05rem; }
+  p { margin: 0; }
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  li::marker { color: var(--nhan); }
+  a { color: var(--nhan); }
+  .mo { color: var(--chu-mo); }
+
+  .bang { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--vien); vertical-align: top; }
+  th { font-weight: 600; color: var(--chu-mo); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+
+  hr.chia { border: 0; border-top: 1px solid var(--vien); margin: 1.5rem 0 0; }
+  footer { color: var(--chu-mo); font-size: .9rem; }
+  :focus-visible { outline: 2px solid var(--nhan); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="khung">
+
+  <header>
+    <div class="eyebrow">Lịch Âm · Lịch Việt &amp; Tử Vi · QM Application</div>
+    <h1>Xoá tài khoản và dữ liệu</h1>
+    <div class="ngay">Áp dụng cho ứng dụng Lịch Âm — Lịch Việt &amp; Tử Vi (com.bquminh.calendar)</div>
+    <nav class="ngonngu" aria-label="Ngôn ngữ">
+      <a href="#vi">Tiếng Việt</a>
+      <a href="#en">English</a>
+      <a href="../">Chính sách bảo mật</a>
+    </nav>
+  </header>
+
+  <div class="tomtat" id="vi">
+    <strong>Cách nhanh nhất:</strong> trong ứng dụng, vào Cài đặt › Tài khoản ›
+    Xoá tài khoản rồi xác nhận. Tài khoản và mọi dữ liệu đồng bộ trên máy chủ
+    bị xoá ngay.
+  </div>
+
+  <section>
+    <h2>Cách 1 · Ngay trong ứng dụng</h2>
+    <ul>
+      <li>Mở ứng dụng Lịch Âm, vào <strong>Cài đặt › Tài khoản</strong>.</li>
+      <li>Bấm <strong>Xoá tài khoản</strong>, đọc lời nhắc rồi bấm
+        <strong>Xoá</strong>.</li>
+      <li>Nếu bạn đăng nhập đã lâu, Google hoặc Apple sẽ hỏi bạn đăng nhập lại
+        một lần để xác nhận đúng chủ tài khoản.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cách 2 · Khi không còn ứng dụng</h2>
+    <p>
+      Gửi email tới <a href="mailto:minhbq@eupgroup.net?subject=X%C3%B3a%20t%C3%A0i%20kho%E1%BA%A3n%20L%E1%BB%8Bch%20%C3%82m">minhbq@eupgroup.net</a>
+      với tiêu đề <strong>"Xoá tài khoản Lịch Âm"</strong>, gửi từ đúng địa
+      chỉ email của tài khoản bạn đã đăng nhập (email Google, hoặc email Apple
+      kể cả địa chỉ chuyển tiếp ẩn danh). Chúng tôi dựa vào địa chỉ gửi để tìm
+      đúng tài khoản, xoá trong vòng <strong>30 ngày</strong> và trả lời khi
+      xong. Nếu không gửi được từ địa chỉ ấy, hãy ghi rõ địa chỉ email của tài
+      khoản để chúng tôi hỏi lại xác nhận.
+    </p>
+  </section>
+
+  <section>
+    <h2>Những gì bị xoá</h2>
+    <ul>
+      <li>Tài khoản đăng nhập của bạn trong ứng dụng (Firebase Authentication):
+        tên, email, ảnh đại diện, mã tài khoản.</li>
+      <li>Toàn bộ bản sao đồng bộ trên máy chủ: ngày giờ sinh và lá số đang
+        xem, các lá số đã lưu, các cung đã mở bằng quảng cáo, cài đặt giao
+        diện và lịch nhắc, danh sách Quyết định nhanh, năm sinh ở Tuổi hợp.</li>
+      <li>Góp ý bạn đã gửi, nếu bạn nêu rõ trong email.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Những gì không bị xoá</h2>
+    <ul>
+      <li>Dữ liệu trong máy bạn: vẫn còn sau khi xoá tài khoản trong ứng dụng.
+        Gỡ ứng dụng để xoá nốt.</li>
+      <li>Gói Premium và gói gỡ quảng cáo đã mua: đi theo tài khoản Google Play
+        hoặc App Store của bạn, không theo tài khoản này.</li>
+      <li>Số liệu sử dụng và báo cáo sự cố: không gắn với tài khoản của bạn,
+        được Firebase giữ theo thời hạn lưu của dịch vụ rồi tự xoá. Muốn xoá
+        sớm hơn, ghi rõ trong email kèm kiểu máy và mốc thời gian.</li>
+    </ul>
+    <p class="mo">
+      Chi tiết về dữ liệu ứng dụng thu thập có ở
+      <a href="../">chính sách bảo mật</a>.
+    </p>
+  </section>
+
+  <hr class="chia">
+
+  <div class="tomtat" id="en">
+    <strong>Quickest way:</strong> in the app, go to Settings › Account ›
+    Delete account and confirm. Your account and all synced data on our
+    server are deleted straight away.
+  </div>
+
+  <section>
+    <h2>Delete your account · English</h2>
+    <h3>Option 1 · Inside the app</h3>
+    <p>
+      Open Lịch Âm, go to <strong>Settings › Account</strong>, tap
+      <strong>Delete account</strong>, read the notice and tap
+      <strong>Delete</strong>. If you signed in a long time ago, Google or
+      Apple will ask you to sign in once more to confirm you own the account.
+    </p>
+
+    <h3>Option 2 · Without the app</h3>
+    <p>
+      Email <a href="mailto:minhbq@eupgroup.net?subject=Delete%20my%20L%E1%BB%8Bch%20%C3%82m%20account">minhbq@eupgroup.net</a>
+      with the subject <strong>"Delete my Lịch Âm account"</strong>, sent from
+      the email address of the account you signed in with (your Google email,
+      or your Apple email including a private relay address). We use the
+      sender address to find the account, delete it within
+      <strong>30 days</strong> and reply when it's done. If you can't send
+      from that address, include it in the message and we will ask you to
+      confirm.
+    </p>
+
+    <h3>What is deleted</h3>
+    <p>
+      Your sign-in account in the app (Firebase Authentication): name, email,
+      profile photo and account ID. The whole synced copy on our server: the
+      birth details and chart you were viewing, saved charts, palaces unlocked
+      with ads, appearance and reminder settings, Quick pick lists and the
+      birth years in Age compatibility. Feedback you sent, if you say so in
+      your email.
+    </p>
+
+    <h3>What is not deleted</h3>
+    <p>
+      Data on your device stays after deleting the account in the app;
+      uninstall to remove it. Premium and ad removal purchases follow your
+      Google Play or App Store account, not this one. Usage statistics and
+      crash reports are not tied to your account; Firebase keeps them for its
+      standard retention period and then deletes them. To have them deleted
+      sooner, say so in your email with your device model and a rough time.
+      See the <a href="../">privacy policy</a> for everything the app
+      collects.
+    </p>
+  </section>
+
+  <footer>
+    Lịch Âm · com.bquminh.calendar · QM Application · Cập nhật 14/10/2026
+  </footer>
+
+</div>
+</body>
+</html>
