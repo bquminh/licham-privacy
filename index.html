@@ -136,7 +136,7 @@
   <header>
     <div class="eyebrow">Lịch Âm · Lịch Việt &amp; Tử Vi</div>
     <h1>Chính sách bảo mật</h1>
-    <div class="ngay">Có hiệu lực từ 15/10/2026 · Áp dụng từ phiên bản 1.3.1, bản có đăng nhập và đồng bộ</div>
+    <div class="ngay">Có hiệu lực từ 04/11/2026 · Áp dụng từ phiên bản 1.3.11, bản có Trợ lý AI, Nhật ký và widget thời tiết</div>
     <nav class="ngonngu" aria-label="Ngôn ngữ">
       <a href="#vi">Tiếng Việt</a>
       <a href="#en">English</a>
@@ -152,8 +152,12 @@
     dụng nhận tên, email và ảnh đại diện của tài khoản. Không đăng nhập thì
     bản sao lưu chỉ gắn với một mã ẩn danh của bản cài. Ứng dụng còn gửi số
     liệu sử dụng và báo cáo sự cố cho Firebase, có quảng cáo Google AdMob ở
-    bản miễn phí, và thanh toán qua Google Play hoặc App Store. Bạn xoá được
-    tài khoản cùng dữ liệu đồng bộ ngay trong ứng dụng. Không bán dữ liệu.
+    bản miễn phí, và thanh toán qua Google Play hoặc App Store. Khi bạn đồng
+    ý dùng Trợ lý AI, câu hỏi cùng dữ liệu của chủ đề đang hỏi (có thể gồm
+    ngày giờ sinh âm lịch và lá số) được gửi tới Google Gemini để trả lời.
+    Nếu bạn chọn "Vị trí hiện tại" cho widget thời tiết, toạ độ gần đúng được
+    gửi tới Viện Khí tượng Na Uy (MET Norway) để lấy dự báo. Bạn xoá được tài
+    khoản cùng dữ liệu đồng bộ ngay trong ứng dụng. Không bán dữ liệu.
   </div>
 
   <section>
@@ -216,7 +220,22 @@
             <td>Có</td>
           </tr>
           <tr>
-            <td>Lựa chọn lịch nào được bật để hiển thị sự kiện; vị trí bong bóng nổi</td>
+            <td>Nhật ký: chữ bạn viết, tâm trạng, nhãn của từng ngày</td>
+            <td>Ghi lại ngày của bạn, xem lại theo lịch</td>
+            <td>Có, chỉ khi bạn đã đăng nhập Google hoặc Apple</td>
+          </tr>
+          <tr>
+            <td>Ảnh bạn chụp hoặc chọn để đính vào nhật ký</td>
+            <td>Hiện kèm trang nhật ký</td>
+            <td>Không, ảnh chỉ nằm trong máy</td>
+          </tr>
+          <tr>
+            <td>Các cuộc trò chuyện với Trợ lý AI</td>
+            <td>Mở lại cuộc trò chuyện cũ (xem mục <a href="#tro-ly-ai">Trợ lý AI</a>)</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td>Lựa chọn lịch nào được bật để hiển thị sự kiện; vị trí bong bóng nổi; nơi xem thời tiết (tỉnh hoặc toạ độ gần đúng); báo thức và hẹn giờ bạn đặt</td>
             <td>Nhớ cách bạn bày trên máy này</td>
             <td>Không</td>
           </tr>
@@ -252,6 +271,90 @@
     <p>
       Bản sao được giữ cho tới khi bạn xoá tài khoản hoặc yêu cầu xoá (xem
       mục <a href="#quyen">Quyền của bạn</a>).
+    </p>
+  </section>
+
+  <section id="tro-ly-ai">
+    <h2>Trợ lý AI</h2>
+    <p>
+      Trợ lý AI ở Khám phá trả lời câu hỏi về chọn ngày, Tử vi, Bát tự và
+      điểm đến. Nhiều câu được trả lời ngay trên máy; câu nào cần AI thì ứng
+      dụng gửi qua máy chủ Cloud Functions của ứng dụng (Singapore) tới
+      <strong>Google Gemini</strong>. Lần đầu bạn hỏi, ứng dụng nói rõ những
+      gì sẽ được gửi đi và chỉ gửi khi bạn bấm "Đồng ý".
+    </p>
+    <div class="bang">
+      <table>
+        <thead>
+          <tr><th>Dữ liệu gửi tới Gemini</th><th>Vì sao cần</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Câu hỏi của bạn và tối đa sáu lượt trò chuyện trước đó</td>
+            <td>Hiểu đúng câu hỏi trong mạch trò chuyện</td>
+          </tr>
+          <tr>
+            <td>Dữ liệu của chủ đề đang hỏi: ngày đang xem và các ngày gợi ý; lá số Tử vi hoặc Bát tự đang xem (ngày, giờ sinh âm lịch, giới tính, can chi, các cung và sao, tứ trụ, đại vận); hoặc thông tin điểm đến</td>
+            <td>Trả lời bám đúng lá số và ngày của bạn thay vì nói chung chung</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Ứng dụng <strong>không</strong> gửi tên, email, vị trí hay sự kiện trong
+      lịch của bạn cho AI. Google xử lý yêu cầu theo
+      <a href="https://ai.google.dev/gemini-api/terms">điều khoản Gemini API</a>
+      với vai trò bên cung cấp dịch vụ. Máy chủ của ứng dụng chỉ đếm số lượt
+      hỏi mỗi ngày theo mã người dùng để giới hạn lượt miễn phí.
+    </p>
+    <p>
+      Các cuộc trò chuyện được lưu trong Firestore theo mã người dùng của bạn
+      (ẩn danh hoặc tài khoản đã đăng nhập) để bạn mở lại; luật truy cập chỉ
+      cho chính bạn đọc. Bạn xoá được từng cuộc ở Trợ lý AI › Lịch sử, và xoá
+      tài khoản sẽ xoá hết. Câu trả lời do AI tạo nên có thể chưa chính xác;
+      mỗi câu có nút <strong>Báo cáo</strong>. Khi bạn báo cáo, câu hỏi, câu
+      trả lời, lý do, ghi chú và mã người dùng được gửi lên để nhà phát triển
+      xem xét; báo cáo chỉ nhà phát triển đọc được và không bị xoá theo tài
+      khoản, muốn xoá hãy viết email cho chúng tôi.
+    </p>
+  </section>
+
+  <section id="thoi-tiet">
+    <h2>Thời tiết và vị trí</h2>
+    <p>
+      Widget Ngày giờ &amp; Thời tiết và màn Thời tiết lấy dự báo từ
+      <strong>Viện Khí tượng Na Uy (MET Norway)</strong> qua api.met.no. Bạn
+      chọn một trong hai cách:
+    </p>
+    <ul>
+      <li><strong>Chọn tỉnh:</strong> ứng dụng gửi toạ độ trung tâm tỉnh ấy,
+        không dùng quyền vị trí.</li>
+      <li><strong>Vị trí hiện tại:</strong> ứng dụng xin quyền vị trí
+        <em>gần đúng</em>, chỉ lấy khi đang mở ứng dụng (không lấy chạy nền),
+        làm tròn toạ độ rồi gửi tới MET Norway để lấy dự báo. Toạ độ ấy được
+        lưu trong máy để widget dùng, không lên máy chủ của chúng tôi.</li>
+    </ul>
+    <p>
+      Yêu cầu gửi MET Norway chỉ có toạ độ, không kèm mã người dùng hay thông
+      tin nào khác về bạn; như mọi yêu cầu trên mạng, máy chủ của họ thấy địa
+      chỉ IP của máy. MET Norway xử lý theo
+      <a href="https://api.met.no/doc/TermsOfService">điều khoản dịch vụ của
+      họ</a>. Bạn thu hồi quyền vị trí bất cứ lúc nào trong cài đặt hệ điều
+      hành; khi đó hãy chọn một tỉnh.
+    </p>
+  </section>
+
+  <section id="nhat-ky">
+    <h2>Nhật ký, khoá vân tay và ảnh</h2>
+    <p>
+      Nhật ký nằm trong máy. Chỉ khi bạn đã đăng nhập Google hoặc Apple, chữ,
+      tâm trạng và nhãn của từng trang mới được đồng bộ lên Firestore như mục
+      <a href="#dong-bo">Sao lưu và đồng bộ</a>; người dùng ẩn danh không đẩy
+      nhật ký lên mây. Ảnh đính vào nhật ký luôn chỉ ở trong máy. Khi bạn bật
+      khoá nhật ký, việc nhận vân tay hay khuôn mặt do hệ điều hành làm; ứng
+      dụng chỉ nhận kết quả đúng hay sai, không bao giờ thấy hay lưu dữ liệu
+      sinh trắc học. Quyền máy ảnh và thư viện ảnh chỉ dùng khi bạn tự chụp
+      hoặc chọn ảnh cho nhật ký, và để lưu ảnh lá số khi bạn bấm lưu.
     </p>
   </section>
 
@@ -342,8 +445,9 @@
   <section>
     <h2>Quảng cáo</h2>
     <p>
-      Bản miễn phí hiện một dải quảng cáo ở cuối màn hình, và một quảng cáo
-      video khi bạn tự chọn xem để mở luận giải một cung. Quảng cáo do
+      Bản miễn phí hiện một dải quảng cáo ở cuối màn hình, đôi khi một quảng
+      cáo toàn màn sau một số thao tác (cách nhau ít nhất vài phút), và một
+      quảng cáo video khi bạn tự chọn xem để mở luận giải một cung. Quảng cáo do
       <strong>Google AdMob</strong> cung cấp. Để chọn và đo quảng cáo, AdMob
       nhận từ máy bạn:
     </p>
@@ -439,11 +543,11 @@
     <h2>Những gì ứng dụng không làm</h2>
     <ul>
       <li>Không thu thập số điện thoại; chỉ nhận tên và email khi bạn tự đăng nhập.</li>
-      <li>Không thu thập vị trí chính xác, danh bạ, ảnh, tệp hay dữ liệu sức khoẻ.</li>
-      <li>Không sao lưu và không gửi đi nội dung sự kiện trong lịch của bạn.</li>
+      <li>Không thu thập vị trí chính xác, danh bạ, tệp hay dữ liệu sức khoẻ; vị trí gần đúng chỉ dùng cho thời tiết khi bạn chọn, và ảnh nhật ký không rời khỏi máy.</li>
+      <li>Không sao lưu và không gửi đi nội dung sự kiện trong lịch của bạn, kể cả cho Trợ lý AI.</li>
       <li>Không đưa tên, email, ngày sinh, lá số hay nội dung lịch vào quảng cáo hay số liệu phân tích.</li>
       <li>Không thấy và không lưu thông tin thanh toán của bạn.</li>
-      <li>Không bán dữ liệu và không chuyển cho bên nào khác ngoài Google (Firebase, AdMob), Apple khi bạn đăng nhập bằng Apple, và cửa hàng ứng dụng nói trên.</li>
+      <li>Không bán dữ liệu và không chuyển cho bên nào khác ngoài Google (Firebase, AdMob, Gemini), Apple khi bạn đăng nhập bằng Apple, MET Norway cho dự báo thời tiết, và cửa hàng ứng dụng nói trên.</li>
     </ul>
   </section>
 
@@ -465,8 +569,12 @@
         xoá được ngay trong ứng dụng (lá số đã lưu, các danh sách, cài đặt);
         thay đổi tự đồng bộ lên bản sao lưu.</li>
       <li><strong>Xoá tài khoản trong ứng dụng:</strong> Cài đặt › Tài khoản ›
-        Xoá tài khoản. Bản sao trên máy chủ và tài khoản đăng nhập bị xoá
-        ngay; dữ liệu trong máy vẫn giữ, gỡ ứng dụng để xoá nốt.</li>
+        Xoá tài khoản. Bản sao trên máy chủ (gồm nhật ký và các cuộc trò
+        chuyện với Trợ lý AI) và tài khoản đăng nhập bị xoá ngay; dữ liệu
+        trong máy vẫn giữ, gỡ ứng dụng để xoá nốt.</li>
+      <li><strong>Trò chuyện với Trợ lý AI:</strong> xoá từng cuộc ở Trợ lý
+        AI › Lịch sử. Báo cáo câu trả lời AI đã gửi: viết email để chúng tôi
+        xoá.</li>
       <li><strong>Không còn ứng dụng:</strong> làm theo trang
         <a href="xoa-tai-khoan/">Yêu cầu xoá tài khoản</a> — gửi email từ
         địa chỉ email của tài khoản, chúng tôi xoá trong vòng 30 ngày và báo
@@ -498,7 +606,8 @@
       Bản 23/09/2026 chưa nói tới việc sao lưu lá số và gửi góp ý lên
       Firestore; bản 14/10/2026 bổ sung cả hai cùng với phần đăng nhập; bản
       15/10/2026 thêm tiến độ game Du Ký Việt vào phần sao lưu và gói Premium
-      trọn đời.
+      trọn đời; bản 04/11/2026 thêm Trợ lý AI (Google Gemini), Nhật ký, thời
+      tiết theo vị trí gần đúng (MET Norway) và quảng cáo toàn màn.
     </p>
   </section>
 
@@ -513,8 +622,13 @@
     Without signing in, the backup is tied only to an anonymous identifier for
     your installation. The app also sends usage statistics and crash reports
     to Firebase, shows Google AdMob ads in the free version, and takes payment
-    through Google Play or the App Store. You can delete your account and its
-    synced data from inside the app. No selling of data.
+    through Google Play or the App Store. If you agree to use the AI
+    Assistant, your question and the data for the topic you ask about (which
+    may include your lunar birth date, hour and chart) are sent to Google
+    Gemini to answer it. If you pick "Current location" for the weather
+    widget, an approximate location is sent to the Norwegian Meteorological
+    Institute (MET Norway) for the forecast. You can delete your account and
+    its synced data from inside the app. No selling of data.
   </div>
 
   <section>
@@ -538,10 +652,14 @@
       how many days ahead, at what time); your Quick pick lists and saved
       lists; the two birth years in Age compatibility; your Du Ký Việt game
       progress (journey, experience points, items, quests) and the game's
-      sound settings; which calendars are
-      switched on for display; and where the floating bubble sits. Everything
-      in that list except the calendar selection, the bubble position and the
-      on/off switch for notifications is also backed up, as described next.
+      sound settings; your AI Assistant conversations; your journal (text,
+      mood and tags for each day, plus photos you attach); which calendars are
+      switched on for display; where the floating bubble sits; where to show
+      the weather for (a province or an approximate location); and alarms and
+      timers you set. Everything in that list except the calendar selection,
+      the bubble position, the weather place, alarms, journal photos and the
+      on/off switch for notifications is also backed up, as described next;
+      the journal is backed up only once you sign in with Google or Apple.
     </p>
     <p>
       Lunar dates, auspicious days, solar terms and Tử Vi charts are all
@@ -568,6 +686,71 @@
       has data, the app merges that data into your account rather than
       deleting it. The copy is kept until you delete your account or ask us to
       delete it.
+    </p>
+
+    <h3 id="ai-assistant">AI Assistant</h3>
+    <p>
+      The AI Assistant under Explore answers questions about picking days,
+      Tử Vi, Bát tự and destinations. Many answers are computed on the device;
+      when AI is needed, the app sends the request through the app's Cloud
+      Functions server (Singapore) to <strong>Google Gemini</strong>. The first
+      time you ask, the app explains what will be sent and only sends it after
+      you tap "Agree".
+    </p>
+    <p>
+      What is sent to Gemini: your question and up to six earlier turns of the
+      conversation, so it understands the context; and the data for the topic
+      you are asking about, so the answer fits you rather than being generic —
+      the day you are viewing and suggested days; the Tử Vi or Bát tự chart you
+      are viewing (lunar birth date and hour, gender, stems and branches,
+      palaces and stars, four pillars, luck periods); or destination details.
+      The app does <strong>not</strong> send your name, email, location or
+      calendar events to the AI. Google processes requests as a service
+      provider under the <a href="https://ai.google.dev/gemini-api/terms">Gemini
+      API terms</a>. The app's server only counts questions per day by user
+      identifier to enforce the free limit.
+    </p>
+    <p>
+      Conversations are stored in Firestore under your user identifier
+      (anonymous or signed in) so you can reopen them; access rules let only you
+      read them. You can delete each conversation under AI Assistant › History,
+      and deleting your account deletes them all. AI-generated answers can be
+      wrong; every answer has a <strong>Report</strong> button. When you report
+      one, the question, the answer, your reason, any note and your user
+      identifier are uploaded for the developer to review; only the developer
+      can read reports, and they are not deleted with your account — email us
+      to have them removed.
+    </p>
+
+    <h3 id="weather">Weather and location</h3>
+    <p>
+      The Date, time &amp; weather widget and the Weather screen get forecasts
+      from the <strong>Norwegian Meteorological Institute (MET Norway)</strong>
+      via api.met.no. If you pick a province, the app sends that province's
+      centre coordinates and uses no location permission. If you pick
+      "Current location", the app asks for <em>approximate</em> location, reads
+      it only while the app is open (never in the background), rounds the
+      coordinates and sends them to MET Norway for the forecast. The
+      coordinates are kept on the device for the widget and never reach our
+      server. Requests to MET Norway carry only coordinates, no user identifier
+      or anything else about you; as with any web request, their server sees
+      your IP address. MET Norway handles them under its
+      <a href="https://api.met.no/doc/TermsOfService">terms of service</a>.
+      You can revoke location access at any time in your system settings and
+      pick a province instead.
+    </p>
+
+    <h3 id="journal">Journal, biometric lock and photos</h3>
+    <p>
+      The journal lives on your device. Only when you are signed in with Google
+      or Apple are the text, mood and tags of each page synced to Firestore as
+      described under Backup and sync; anonymous users never upload their
+      journal. Photos attached to the journal always stay on the device. When
+      you lock the journal, fingerprint or face recognition is done by the
+      operating system; the app only learns whether it succeeded and never sees
+      or stores biometric data. Camera and photo library access are used only
+      when you take or pick a photo for the journal, and to save a chart image
+      when you tap save.
     </p>
 
     <h3>Signing in with Google or Apple</h3>
@@ -626,8 +809,10 @@
 
     <h3>Advertising</h3>
     <p>
-      The free version shows a banner ad at the bottom of the screen, and a
-      video ad when you choose to watch one to unlock the reading of a palace.
+      The free version shows a banner ad at the bottom of the screen,
+      occasionally a full-screen ad after certain actions (at least a few
+      minutes apart), and a video ad when you choose to watch one to unlock the
+      reading of a palace.
       Ads are served by <strong>Google AdMob</strong>, which receives from your
       device: the advertising ID (Android Advertising ID, or IDFA on iPhone if
       you allow tracking), to pick more relevant ads and cap how often one
@@ -689,12 +874,15 @@
     <h3>What the app does not do</h3>
     <p>
       It collects no phone number, and receives your name and email only if
-      you sign in. It collects no precise location, contacts, photos, files or
-      health data. It never backs up or sends your calendar event content, and
-      never feeds your name, email, birth details, charts or calendar content
-      into ads or analytics. It never sees or stores your payment details.
-      There is no sale or transfer of data to anyone beyond Google (Firebase,
-      AdMob), Apple when you sign in with Apple, and the app stores above.
+      you sign in. It collects no precise location, contacts, files or health
+      data; approximate location is used only for weather when you choose it,
+      and journal photos never leave the device. It never backs up or sends
+      your calendar event content, not even to the AI Assistant, and never
+      feeds your name, email, birth details, charts or calendar content into
+      ads or analytics. It never sees or stores your payment details. There is
+      no sale or transfer of data to anyone beyond Google (Firebase, AdMob,
+      Gemini), Apple when you sign in with Apple, MET Norway for weather
+      forecasts, and the app stores above.
     </p>
 
     <h3>Children</h3>
@@ -712,14 +900,15 @@
       You can view, edit and delete everything you entered from inside the app
       (saved charts, lists, settings), and changes sync to the backup. To
       delete your account, go to Settings › Account › Delete account: the copy
-      on our server and your sign-in account are deleted straight away, while
+      on our server (including your journal and AI Assistant conversations)
+      and your sign-in account are deleted straight away, while
       the data on your device stays until you uninstall. If you no longer have
       the app, follow the <a href="xoa-tai-khoan/#en">account deletion
       request</a> page — email us from your account's address and we delete it
       within 30 days and confirm. To delete the anonymous backup of a device
       that never signed in, sign in and then delete the account as above; the
       anonymous backup is merged into the account and deleted with it. For
-      usage statistics, crash reports or feedback, write to
+      usage statistics, crash reports, feedback or AI answer reports, write to
       <a href="mailto:minhbq@eupgroup.net">minhbq@eupgroup.net</a> with a rough
       time and your device model so we can locate and delete them, or ask
       Google to.
@@ -738,13 +927,15 @@
       updated with a new effective date before that version ships. The
       23 September 2026 version did not mention the chart backup or feedback
       sent to Firestore; the 14 October 2026 version added both, together with
-      sign-in; the 15 October 2026 version adds Du Ký Việt game progress to
-      the backup and the lifetime Premium purchase.
+      sign-in; the 15 October 2026 version added Du Ký Việt game progress to
+      the backup and the lifetime Premium purchase; the 4 November 2026
+      version adds the AI Assistant (Google Gemini), the journal, weather by
+      approximate location (MET Norway) and full-screen ads.
     </p>
   </section>
 
   <footer>
-    Lịch Âm · com.bquminh.calendar · Cập nhật 15/10/2026
+    Lịch Âm · com.bquminh.calendar · Cập nhật 04/11/2026
   </footer>
 
 </div>
